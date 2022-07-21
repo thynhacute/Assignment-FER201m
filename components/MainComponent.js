@@ -1,13 +1,13 @@
-import React from 'react';
+import { actions } from 'react-redux-form';
 
-export const Loading = () => {
-    return(
-        <div className="col-12">
-            <span className="fa fa-spinner fa-pulse fa-3x fa-fw text-primary"></span>
-            <p>Loading . . .</p>
-        </div>
-    );
-};
+. . .
+
+  resetFeedbackForm: () => { dispatch(actions.reset('feedback'))}
+  
+. . .
+
+              <Route exact path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
+
 
 
 
