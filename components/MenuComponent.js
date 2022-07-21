@@ -61,4 +61,6 @@ class Menu extends Component {
         );
     }
 }
-
+<Card key={dish.id}
+ 		onClick={() => this.props.onClick(dish.id)}>
+{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
