@@ -1,20 +1,27 @@
-function RenderComments({comments, addComment, dishId}) {
+import { Loading } from './LoadingComponent';
 
+. . .
 
-    . . .
-    
-          <CommentForm dishId={dishId} addComment={addComment} />
-    
-    . . .
-    
-            this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
-    
-    
-    . . .
-    
-          <RenderComments comments={props.comments}
-            addComment={props.addComment}
-            dishId={props.dish.id}
-          />
+            
+        if (props.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (props.errMess) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
+        else if (props.dish != null) 
+
     
 

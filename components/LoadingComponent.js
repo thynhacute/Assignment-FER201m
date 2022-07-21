@@ -8,14 +8,3 @@ export const Loading = () => {
         </div>
     );
 };
-
-
-
-
-
-
-
-
-
-
-
