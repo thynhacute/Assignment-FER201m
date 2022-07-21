@@ -1,36 +1,24 @@
-import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 . . .
 
-function RenderCard({item, isLoading, errMess}) {
-    
-    if (isLoading) {
-        return(
-                <Loading />
-        );
-    }
-    else if (errMess) {
-        return(
-                <h4>{errMess}</h4>
-        );
-    }
-    else 
-        return(
-            <Card>
-                <CardImg src={item.image} alt={item.name} />
-                <CardBody>
-                <CardTitle>{item.name}</CardTitle>
-                {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }
-                <CardText>{item.description}</CardText>
-                </CardBody>
-            </Card>
-        );
+                    <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                    
+. . .
 
-}
+Then, open HomeComponent.js and update it as follows:
+. . .
+
+import { baseUrl } from '../shared/baseUrl';
 
 . . .
 
-                    <RenderCard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}  />
+                <CardImg src={baseUrl + item.image} alt={item.name} />
+                
+. . .
+
+                    <RenderCard item={props.promotion} isLoading={props.promoLoading} errMess={props.promoErrMess} />
+
 
 
 
