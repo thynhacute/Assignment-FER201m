@@ -1,10 +1,27 @@
-import Header from './HeaderComponent';
-import Footer from './FooterComponent';
+import Home from './HomeComponent';
 
 
 
-        <Header />
-        <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-        <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
-        <Footer />
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+
+
+  render() {
+
+    const HomePage = () => {
+      return(
+          <Home 
+          />
+      );
+    }
+
+  }
+
+          <Switch>
+              <Route path='/home' component={HomePage} />
+              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+              <Redirect to="/home" />
+          </Switch>
+
+
 
